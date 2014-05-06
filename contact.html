@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <title>Exa Solutions | Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+
+<body>
+  <div id="wrapper">
+	 <div id="background">
+   	<div id="header">
+    <div id="top_nav">
+    	<a href="index.html"><img src="img/home_icon.jpg" /></a>
+        <a href="contact.html"><img src="img/msg_icon.jpg" /></a>
+        <img src="img/call_icon.jpg" />
+        <img src="img/ph_no.jpg" />
+    </div>
+         <div id="logo">
+        	<a href="index.html">
+       		<img src="img/logo.jpg"/>
+            </a>
+            </div> 
+      </div>       
+  <div id="nav">
+    
+    <a href="index.html"><img src="img/home.jpg" width="150px" height="35px" /></a><a href="about.html"><img src="img/about.jpg" width="150px" height="35px" /></a><a href="under_construction.html"><img src="img/project.jpg" width="150px" height="35px" /></a><a href="under_construction.html"><img src="img/faq.jpg" width="150px" height="35px" /></a><a href="contact.html"><img src="img/contact.jpg" width="150px" height="35px" /></a>
+  </div>
+        
+  <div id="contact_form">
+            <h1 style="font-size:22px;"><b><u>Contact Us</u></b></h1>
+              <form name="contact_form" method="post" onSubmit="return evalid()">
+                <fieldset>
+                  <div class="field">
+                    <label>Your Name:*</label>
+                    <input type="text" name="fname" id="fname"/>
+                  </div>
+                  <div class="field">
+                    <label>Your E-mail:*</label>
+                   <input type="text" name="mail" id="mail"/>
+                  </div>
+                  <div class="field">
+                    <label>Your Number:*</label>
+                    <input type="text" name="phone" id="phone" onKeyPress="return numere(event)" onKeyUp="return limitarelungime(this, 10)"  />
+                  </div>
+                  <div class="field">
+                    <label>Your Subject:*</label>
+                    <input type="text" name="subject" id="subject"/>
+                  </div>
+                  
+                  <div class="field">
+                    <label>Your Message:*</label>
+                   <textarea rows="5" name="message" id="message" onKeyUp="return limitarelungime(this, 255)"></textarea>
+                  </div>
+                  <div>
+                    <input type="Submit" name="Submit" id="Submit" value="Send"/>
+                    <input type="reset" name="Clear" id="Clear" value="Clear"/>
+                  </div>
+                </fieldset>
+              </form>
+              
+ <script type="text/javascript">
+  //phone number velidation
+      function numere(e)
+	  {
+      	var unicode=e.charCode? e.charCode : e.keyCode
+      	if (unicode!=8){ 
+      	if (unicode<48||unicode>57)
+      	return false;
+		}
+      }
+function limitarelungime(obj, length){
+        var lungime=length
+        if (obj.value.length>lungime)
+        obj.value=obj.value.substring(0, lungime)
+      }
+  
+//email form validation
+
+function everif(str) {
+
+    var at="@"
+    var punct="."
+    var lat=str.indexOf(at)
+    var lstr=str.length
+    var lpunct=str.indexOf(punct)
+    if (str.indexOf(at)==-1){
+       alert("Valid email must be entered")
+       return false;
+    }
+
+    if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+       alert("Valid email must be entered")
+       return false
+    }
+
+    if (str.indexOf(punct)==-1 || str.indexOf(punct)==0 || str.indexOf(punct)==lstr){
+        alert("Valid email must be entered")
+        return false;
+    }
+
+     if (str.indexOf(at,(lat+1))!=-1){
+        alert("Valid email must be entered")
+        return false;
+     }
+
+     if (str.substring(lat-1,lat)==punct || str.substring(lat+1,lat+2)==punct){
+        alert("Valid email must be entered")
+        return false;
+     }
+
+     if (str.indexOf(punct,(lat+2))==-1){
+        alert("Valid email must be entered")
+        return false;
+     }
+    
+     if (str.indexOf(" ")!=-1){
+        alert("Valid email must be entered")
+        return false;
+     }
+
+     return true  ;        
+  }
+
+function evalid(){
+  var emailID=document.contact_form.mail
+  
+  if (everif(emailID.value)==false){
+    emailID.focus()
+    return false;
+  }
+  
+//empty field validation
+  
+  var fname=document.contact_form.fname
+  if ((fname.value==null)||(fname.value=="")){
+        alert("Fields marqued with * must be entered")
+        fname.focus()
+        return false;
+        }
+  
+  var subject=document.contact_form.subject 
+  if ((subject.value==null)||(subject.value=="")){
+        alert("Fields marqued with * must be entered")
+        subject.focus()
+        return false;
+        }
+
+  var message=document.contact_form.message 
+  if ((message.value==null)||(message.value=="")){
+        alert("Fields marqued with * must be entered")
+        message.focus()
+        return false
+        }
+  alert("Thank You for contacting Us.We will revert shortly");   
+  return true;
+  
+  document.getElementById('contact_form').reset();
+ }
+ </script>
+            
+                  	
+  </div>
+  <div id="read_more">
+  	<a href="under_construction.html"><img src="img/readmore.jpg" /></a></div>
+    <div id="footer_mix">
+    	<div id="bottom_nav">
+        	<br><br>
+        	<a href="index.html">Home |</a>
+            <a href="about.html">About Us |</a>
+            <a href="under_construction.html">Our Pojects |</a>
+            <a href="under_construction.html">FAQ |</a>
+            <a href="contact.html">Contact Us </a>
+        </div>
+		<a href="http://www.exa.com.au"><img id="mainsite" src=			"img/mainsite.jpg" /></a>
+       </div>
+    <div id="footer">
+    	<div id="mid_border">
+        <img src="img/footer_logo.jpg" height="40" style="float:right"/>
+        <div id="right_border">
+        </div></div>
+        <div id="last_border"></div>
+        </div>
+</div>
+</body>
+</html>
